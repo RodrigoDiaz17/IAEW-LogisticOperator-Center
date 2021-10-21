@@ -1,0 +1,168 @@
+openapi: 3.0.1
+info:
+  title: API Operador logístico centro v1
+  description: Documentación de la API del operador logístico centro, para el trabajo práctico integrador de la materia 'Integración de Aplicaciones Web', UTN FRC 2021
+  version: v1
+paths:
+  /api/Envios/ordenes_envio/{orden_envio}:
+    get:
+      tags:
+        - Envios
+      parameters:
+        - name: orden_envio
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: Success
+  /api/Envios/ordenes_envio:
+    post:
+      tags:
+        - Envios
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DatosEnvio'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/DatosEnvio'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/DatosEnvio'
+      responses:
+        '200':
+          description: Success
+  /api/Envios/ordenes_envio/{orden_envio}/repartidor/{id_repartidor}:
+    post:
+      tags:
+        - Envios
+      parameters:
+        - name: orden_envio
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: id_repartidor
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: Success
+  /api/Envios/ordenes_envio/{orden_envio}/entrega:
+    post:
+      tags:
+        - Envios
+      parameters:
+        - name: orden_envio
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: Success
+  /api/Repartidores:
+    get:
+      tags:
+        - Repartidores
+      responses:
+        '200':
+          description: Success
+    post:
+      tags:
+        - Repartidores
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Repartidor'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Repartidor'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Repartidor'
+      responses:
+        '200':
+          description: Success
+  /api/Repartidores/{repartidorId}:
+    get:
+      tags:
+        - Repartidores
+      parameters:
+        - name: repartidorId
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: Success
+    delete:
+      tags:
+        - Repartidores
+      parameters:
+        - name: repartidorId
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: Success
+components:
+  schemas:
+    DatosEnvio:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        direccionOrigen:
+          type: string
+          nullable: true
+        direccionDestino:
+          type: string
+          nullable: true
+        contactoComprador:
+          type: string
+          nullable: true
+        estadoEnvio:
+          $ref: '#/components/schemas/EstadoEnvio'
+        detalleProducto:
+          type: string
+          nullable: true
+        repartidor:
+          $ref: '#/components/schemas/Repartidor'
+        repartidorId:
+          type: integer
+          format: int64
+      additionalProperties: false
+    EstadoEnvio:
+      enum:
+        - 0
+        - 1
+        - 2
+      type: integer
+      format: int32
+    Repartidor:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        nombre:
+          type: string
+          nullable: true
+      additionalProperties: false
