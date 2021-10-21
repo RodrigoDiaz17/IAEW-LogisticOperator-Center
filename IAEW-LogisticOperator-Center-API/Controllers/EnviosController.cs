@@ -14,7 +14,7 @@ namespace IAEW_LogisticOperator_Center_API.Controllers
     {
 
         [HttpGet("ordenes_envio/{orden_envio}")]
-        public IActionResult GetById(long id)
+        public IActionResult GetById(long orden_envio)
         {
             // getear envio
             return Ok(new DatosEnvio());

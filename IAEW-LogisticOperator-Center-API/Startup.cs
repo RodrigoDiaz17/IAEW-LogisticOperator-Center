@@ -28,12 +28,6 @@ namespace IAEW_LogisticOperator_Center_API
                     Title = $"API Operador logístico centro {groupName}",
                     Version = groupName,
                     Description = "Documentación de la API del operador logístico centro, para el trabajo práctico integrador de la materia 'Integración de Aplicaciones Web', UTN FRC 2021",
-                    Contact = new OpenApiContact
-                    {
-                        Name = "Foo Company",
-                        Email = string.Empty,
-                        Url = new Uri("https://foo.com/"),
-                    }
                 });
             });
         }
