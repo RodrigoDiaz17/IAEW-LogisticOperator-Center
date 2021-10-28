@@ -1,5 +1,6 @@
 ﻿using IAEW_LogisticOperator_Center_API.Models;
 using Microsoft.AspNetCore.Mvc;
+using ServiceLayer.Contracts;
 
 namespace IAEW_LogisticOperator_Center_API.Controllers
 {
@@ -7,6 +8,14 @@ namespace IAEW_LogisticOperator_Center_API.Controllers
     [ApiController]
     public class RepartidoresController : ControllerBase
     {
+
+        private readonly IRepartidoresService _repartidoresService;
+
+        public RepartidoresController(IRepartidoresService repartidoresService)
+        {
+            _repartidoresService = repartidoresService;
+        }
+
         [HttpGet]
         public IActionResult GetAll()
         {
@@ -15,15 +24,17 @@ namespace IAEW_LogisticOperator_Center_API.Controllers
 
         [Route("{repartidorId}")]
         [HttpGet]
-        public IActionResult GetById(long repartidorId)
+        public ActionResult GetById(long repartidorId)
         {
-            return Ok();
+            var repartidor = _repartidoresService.GetById(repartidorId);
+            return Ok(repartidor);
         }
 
         [HttpPost]
-        public IActionResult Create([FromBody] Repartidor repartidor)
+        public ActionResult Create([FromBody] Repartidor repartidor)
         {
-            return Ok();
+            var nuevoRepartidor = _repartidoresService.Create(repartidor);
+            return Ok(nuevoRepartidor);
         }
 
         [Route("{repartidorId}")]
