@@ -1,4 +1,5 @@
 using IAEW_LogisticOperator_Center_API.Utils;
+using System;
 
 namespace IAEW_LogisticOperator_Center_API.Models
 {
@@ -11,6 +12,7 @@ namespace IAEW_LogisticOperator_Center_API.Models
        public EstadoEnvio EstadoEnvio { get; set; }
        public string DetalleProducto { get; set; }
        public virtual Repartidor Repartidor { get; set; }
-       public long RepartidorId { get; set; }
-   }
+       public long? RepartidorId { get; set; }
+       public DateTime? FechaEntrega { get; set; }
+    }
 }
