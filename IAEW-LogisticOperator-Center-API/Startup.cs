@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -30,6 +32,17 @@ namespace IAEW_LogisticOperator_Center_API
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(options =>
+            {
+                options.Authority = "https://dev-iy2c6ke5.us.auth0.com/";
+                options.Audience = "https://www.example.com/api-logistic-operator-center";
+            });
+
+
             services.AddControllers();
             
             services.AddTransient<IRepartidoresService, RepartidoresService >();
@@ -64,10 +77,20 @@ namespace IAEW_LogisticOperator_Center_API
             });
             app.UseRouting();
 
+            
+            app.UseAuthentication();
+            app.UseAuthorization();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
+
+
+            
+            
         }
+
+        
     }
 }

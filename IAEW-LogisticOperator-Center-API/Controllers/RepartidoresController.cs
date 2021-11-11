@@ -1,9 +1,11 @@
 ﻿using IAEW_LogisticOperator_Center_API.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ServiceLayer.Contracts;
 
 namespace IAEW_LogisticOperator_Center_API.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class RepartidoresController : ControllerBase
