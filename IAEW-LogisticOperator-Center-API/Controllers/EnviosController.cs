@@ -1,6 +1,7 @@
 ﻿using IAEW_LogisticOperator_Center_API.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ServiceLayer.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,20 +13,26 @@ namespace IAEW_LogisticOperator_Center_API.Controllers
     [ApiController]
     public class EnviosController : ControllerBase
     {
+        private readonly IOrdenesService _ordenesService;
+
+        public EnviosController(IOrdenesService ordenesService)
+        {
+            _ordenesService = ordenesService;
+        }
 
         [HttpGet("ordenes_envio/{orden_envio}")]
         public IActionResult GetById(long orden_envio)
         {
             // getear envio
-            return Ok(new DatosEnvio());
+            return Ok(new OrdenEnvio());
         }
 
         [HttpPost("ordenes_envio")]
-        public IActionResult CreateOrder([FromBody] DatosEnvio datosEnvio) 
+        public IActionResult CreateOrder([FromBody] OrdenEnvio datosEnvio) 
         {
             // crear envio
             var createdUri = $"uri del envio creado a armar despues";
-            var createdEnvio = new DatosEnvio(); // retornar el envio creado despues
+            var createdEnvio = new OrdenEnvio(); // retornar el envio creado despues
             return Created(createdUri, createdEnvio);
         }
 
@@ -38,11 +45,11 @@ namespace IAEW_LogisticOperator_Center_API.Controllers
         }
 
         [HttpPost("ordenes_envio/{orden_envio}/entrega")]
-        public IActionResult RegisterDelivery([FromRoute] long orden_envio)
+        public async Task<IActionResult> RegisterDelivery([FromRoute] long orden_envio)
         {
-            // actualizar estado y activar webhook
+            var result = await _ordenesService.RegisterDelivery(orden_envio);
 
-            return Ok();
+            return result ? Ok() : new StatusCodeResult(StatusCodes.Status500InternalServerError);
         }
     }
 }

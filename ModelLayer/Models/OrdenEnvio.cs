@@ -3,7 +3,7 @@ using System;
 
 namespace IAEW_LogisticOperator_Center_API.Models
 {
-   public class DatosEnvio
+   public class OrdenEnvio
    {
        public long Id { get; set; }
        public string DireccionOrigen { get; set; }

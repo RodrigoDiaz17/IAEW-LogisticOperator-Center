@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PersistanceLayer.Context;
 
 namespace PersistanceLayer.Migrations
 {
     [DbContext(typeof(LogisticOperatorDbContext))]
-    partial class LogisticOperatorDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211116222814_rename-table-ordenes-envio")]
+    partial class renametableordenesenvio
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

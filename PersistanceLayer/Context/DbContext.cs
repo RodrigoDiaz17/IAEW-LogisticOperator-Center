@@ -13,6 +13,6 @@ namespace PersistanceLayer.Context
         }
 
         public DbSet<Repartidor> Repartidores { get; set; }
-        public DbSet<DatosEnvio> DatosEnvios { get; set; }
+        public DbSet<OrdenEnvio> OrdenesEnvios { get; set; }
     }
 }

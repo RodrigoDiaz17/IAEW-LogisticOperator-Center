@@ -46,6 +46,8 @@ namespace IAEW_LogisticOperator_Center_API
             services.AddControllers();
             
             services.AddTransient<IRepartidoresService, RepartidoresService >();
+            services.AddTransient<IOrdenesService, OrdenesService>();
+
 
             services.AddDbContext<LogisticOperatorDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
