@@ -1,6 +1,8 @@
 ﻿using IAEW_LogisticOperator_Center_API.Models;
 using PersistanceLayer.Context;
 using ServiceLayer.Contracts;
+using ServiceLayer.Data_Transfer_Objects;
+using ServiceLayer.Mappers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,7 +34,7 @@ namespace ServiceLayer.Services
 
         }
 
-        public bool Update(Repartidor repartidor)
+        public bool Update(RepartidorDto repartidor)
         {
             try
             {
@@ -41,7 +43,7 @@ namespace ServiceLayer.Services
                 if (entity == null)
                     throw new Exception("El repartidor no existe");
 
-                entity = repartidor;
+                entity = repartidor.MapToEntity((Repartidor)entity);
 
                 return _dbContext.SaveChanges() > 0;
             }
@@ -49,6 +51,7 @@ namespace ServiceLayer.Services
             {
                 throw new Exception("Error al actualizar los datos del repartidor", e);
             }
+
         }
 
         public bool Delete(long Idrepartidor)

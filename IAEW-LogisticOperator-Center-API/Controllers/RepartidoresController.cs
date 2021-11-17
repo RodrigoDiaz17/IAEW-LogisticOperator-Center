@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ServiceLayer.Contracts;
+using ServiceLayer.Data_Transfer_Objects;
 
 namespace IAEW_LogisticOperator_Center_API.Controllers
 {
@@ -21,7 +22,8 @@ namespace IAEW_LogisticOperator_Center_API.Controllers
         [HttpGet]
         public IActionResult GetAll()
         {
-            return Ok();
+            var repartidores = _repartidoresService.GetAll();
+            return Ok(repartidores);
         }
 
         [Route("{repartidorId}")]
@@ -39,11 +41,19 @@ namespace IAEW_LogisticOperator_Center_API.Controllers
             return Ok(nuevoRepartidor);
         }
 
+        [HttpPut]
+        public ActionResult Update(RepartidorDto dto)
+        {
+            var repartidor = _repartidoresService.Update(dto);
+            return Ok(repartidor);
+        }
+
         [Route("{repartidorId}")]
         [HttpDelete]
         public IActionResult Delete(long repartidorId)
         {
-            return Ok();
+            var repartidor = _repartidoresService.Delete(repartidorId);
+            return Ok(repartidor);
         }
     }
 }
