@@ -15,6 +15,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace IAEW_LogisticOperator_Center_API
 {
@@ -26,7 +29,7 @@ namespace IAEW_LogisticOperator_Center_API
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
+        public static IConfiguration Configuration { get; private set; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
@@ -42,10 +45,9 @@ namespace IAEW_LogisticOperator_Center_API
                 options.Audience = "https://www.example.com/api-logistic-operator-center";
             });
 
-
             services.AddControllers();
-            
-            services.AddTransient<IRepartidoresService, RepartidoresService >();
+
+            services.AddTransient<IRepartidoresService, RepartidoresService>();
             services.AddTransient<IOrdenesService, OrdenesService>();
 
 
@@ -79,7 +81,8 @@ namespace IAEW_LogisticOperator_Center_API
             });
             app.UseRouting();
 
-            
+            app.UseHttpsRedirection();
+
             app.UseAuthentication();
             app.UseAuthorization();
 
@@ -87,12 +90,6 @@ namespace IAEW_LogisticOperator_Center_API
             {
                 endpoints.MapControllers();
             });
-
-
-            
-            
         }
-
-        
     }
 }
