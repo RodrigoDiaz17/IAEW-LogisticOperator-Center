@@ -1,0 +1,18 @@
+using IAEW_LogisticOperator_Center_API.Utils;
+using System;
+
+namespace IAEW_LogisticOperator_Center_API.Models
+{
+   public class OrdenEnvio
+   {
+       public long Id { get; set; }
+       public string DireccionOrigen { get; set; }
+       public string DireccionDestino { get; set; }
+       public string ContactoComprador { get; set; }
+       public EstadoEnvio EstadoEnvio { get; set; }
+       public string DetalleProducto { get; set; }
+       public virtual Repartidor Repartidor { get; set; }
+       public long? RepartidorId { get; set; }
+       public DateTime? FechaEntrega { get; set; }
+    }
+}
