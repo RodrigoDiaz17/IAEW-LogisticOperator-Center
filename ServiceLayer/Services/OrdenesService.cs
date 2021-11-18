@@ -85,6 +85,7 @@ namespace ServiceLayer.Services
                 nuevoEstado = EstadoEnvio.Entregado.GetAttribute<DescriptionAttribute>().Description
             };
             string url = _configuration.GetValue<string>("WebhookUrl");
+            url += @"{orderId}/novedades";
             string token = _configuration.GetValue<string>("AccessTokenProcesadorEnvios");
             string dtoAsString = JsonConvert.SerializeObject(dto);
             StringContent stringContent = new StringContent(dtoAsString, Encoding.UTF8, "application/json");
