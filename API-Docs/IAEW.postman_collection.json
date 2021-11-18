@@ -1,0 +1,401 @@
+{
+	"info": {
+		"_postman_id": "044ff3db-7089-4e0d-97ca-fab0dee9d656",
+		"name": "IAEW",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "TPI-LogisticOperator",
+			"item": [
+				{
+					"name": "Repartidores",
+					"item": [
+						{
+							"name": "Repartidores",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImtNYWVFVnkzXzdFbjIyN3NmOVFleSJ9.eyJpc3MiOiJodHRwczovL2Rldi1peTJjNmtlNS51cy5hdXRoMC5jb20vIiwic3ViIjoiRWV4Wk5iSmY1cmoyRFBmVm44cjVKZU1kaTRlUVZGa1RAY2xpZW50cyIsImF1ZCI6Imh0dHBzOi8vd3d3LmV4YW1wbGUuY29tL2FwaS1sb2dpc3RpYy1vcGVyYXRvci1jZW50ZXIiLCJpYXQiOjE2MzcxODE0MTksImV4cCI6MTYzNzI2NzgxOSwiYXpwIjoiRWV4Wk5iSmY1cmoyRFBmVm44cjVKZU1kaTRlUVZGa1QiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.t7Da-OW67HTmjW5O7mD00TBv51UVCiakK_HsdppDnSDZ_w1KrUVvTZB6bV4vVR6P6omDq5HjdHLJCYdIrNM4iclS1jHDZ0HeyRxHWxGISyxNe55mKKL3lyhhcifECnALNoC1m_CthwFvf5LeOzL7LE_tjy3g3PEvGD8US1-E2tjzr5T2Nw7SAU3G-GFU19OWa1xOql4gcMrXpIVWlJKgZ1dMlhUCcTWaoIb7roApLKChIXUenbRKCjgg69yVp2dxDbMHPW4WsnGOYEXVRUbCam0LdYKJ8_bkPCdcgURCcyWjXsTxQl5AdPx4OteH8WGiGunvENty0EL8Z5nYaEDFUQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://localhost:44342/api/Repartidores/",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "44342",
+									"path": [
+										"api",
+										"Repartidores",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Crear Repartidor",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImtNYWVFVnkzXzdFbjIyN3NmOVFleSJ9.eyJpc3MiOiJodHRwczovL2Rldi1peTJjNmtlNS51cy5hdXRoMC5jb20vIiwic3ViIjoiRWV4Wk5iSmY1cmoyRFBmVm44cjVKZU1kaTRlUVZGa1RAY2xpZW50cyIsImF1ZCI6Imh0dHBzOi8vd3d3LmV4YW1wbGUuY29tL2FwaS1sb2dpc3RpYy1vcGVyYXRvci1jZW50ZXIiLCJpYXQiOjE2MzcxODE0MTksImV4cCI6MTYzNzI2NzgxOSwiYXpwIjoiRWV4Wk5iSmY1cmoyRFBmVm44cjVKZU1kaTRlUVZGa1QiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.t7Da-OW67HTmjW5O7mD00TBv51UVCiakK_HsdppDnSDZ_w1KrUVvTZB6bV4vVR6P6omDq5HjdHLJCYdIrNM4iclS1jHDZ0HeyRxHWxGISyxNe55mKKL3lyhhcifECnALNoC1m_CthwFvf5LeOzL7LE_tjy3g3PEvGD8US1-E2tjzr5T2Nw7SAU3G-GFU19OWa1xOql4gcMrXpIVWlJKgZ1dMlhUCcTWaoIb7roApLKChIXUenbRKCjgg69yVp2dxDbMHPW4WsnGOYEXVRUbCam0LdYKJ8_bkPCdcgURCcyWjXsTxQl5AdPx4OteH8WGiGunvENty0EL8Z5nYaEDFUQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"nombre\": \"Manuel\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:44342/api/repartidores",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "44342",
+									"path": [
+										"api",
+										"repartidores"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Consultar Repartidor",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImtNYWVFVnkzXzdFbjIyN3NmOVFleSJ9.eyJpc3MiOiJodHRwczovL2Rldi1peTJjNmtlNS51cy5hdXRoMC5jb20vIiwic3ViIjoiRWV4Wk5iSmY1cmoyRFBmVm44cjVKZU1kaTRlUVZGa1RAY2xpZW50cyIsImF1ZCI6Imh0dHBzOi8vd3d3LmV4YW1wbGUuY29tL2FwaS1sb2dpc3RpYy1vcGVyYXRvci1jZW50ZXIiLCJpYXQiOjE2MzcxODE0MTksImV4cCI6MTYzNzI2NzgxOSwiYXpwIjoiRWV4Wk5iSmY1cmoyRFBmVm44cjVKZU1kaTRlUVZGa1QiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.t7Da-OW67HTmjW5O7mD00TBv51UVCiakK_HsdppDnSDZ_w1KrUVvTZB6bV4vVR6P6omDq5HjdHLJCYdIrNM4iclS1jHDZ0HeyRxHWxGISyxNe55mKKL3lyhhcifECnALNoC1m_CthwFvf5LeOzL7LE_tjy3g3PEvGD8US1-E2tjzr5T2Nw7SAU3G-GFU19OWa1xOql4gcMrXpIVWlJKgZ1dMlhUCcTWaoIb7roApLKChIXUenbRKCjgg69yVp2dxDbMHPW4WsnGOYEXVRUbCam0LdYKJ8_bkPCdcgURCcyWjXsTxQl5AdPx4OteH8WGiGunvENty0EL8Z5nYaEDFUQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://localhost:44342/api/Repartidores/4",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "44342",
+									"path": [
+										"api",
+										"Repartidores",
+										"4"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Eliminar Repartidor",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImtNYWVFVnkzXzdFbjIyN3NmOVFleSJ9.eyJpc3MiOiJodHRwczovL2Rldi1peTJjNmtlNS51cy5hdXRoMC5jb20vIiwic3ViIjoiRWV4Wk5iSmY1cmoyRFBmVm44cjVKZU1kaTRlUVZGa1RAY2xpZW50cyIsImF1ZCI6Imh0dHBzOi8vd3d3LmV4YW1wbGUuY29tL2FwaS1sb2dpc3RpYy1vcGVyYXRvci1jZW50ZXIiLCJpYXQiOjE2MzcxODE0MTksImV4cCI6MTYzNzI2NzgxOSwiYXpwIjoiRWV4Wk5iSmY1cmoyRFBmVm44cjVKZU1kaTRlUVZGa1QiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.t7Da-OW67HTmjW5O7mD00TBv51UVCiakK_HsdppDnSDZ_w1KrUVvTZB6bV4vVR6P6omDq5HjdHLJCYdIrNM4iclS1jHDZ0HeyRxHWxGISyxNe55mKKL3lyhhcifECnALNoC1m_CthwFvf5LeOzL7LE_tjy3g3PEvGD8US1-E2tjzr5T2Nw7SAU3G-GFU19OWa1xOql4gcMrXpIVWlJKgZ1dMlhUCcTWaoIb7roApLKChIXUenbRKCjgg69yVp2dxDbMHPW4WsnGOYEXVRUbCam0LdYKJ8_bkPCdcgURCcyWjXsTxQl5AdPx4OteH8WGiGunvENty0EL8Z5nYaEDFUQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://localhost:44342/api/Repartidores/5",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "44342",
+									"path": [
+										"api",
+										"Repartidores",
+										"5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Modificar Repartidor",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImtNYWVFVnkzXzdFbjIyN3NmOVFleSJ9.eyJpc3MiOiJodHRwczovL2Rldi1peTJjNmtlNS51cy5hdXRoMC5jb20vIiwic3ViIjoiRWV4Wk5iSmY1cmoyRFBmVm44cjVKZU1kaTRlUVZGa1RAY2xpZW50cyIsImF1ZCI6Imh0dHBzOi8vd3d3LmV4YW1wbGUuY29tL2FwaS1sb2dpc3RpYy1vcGVyYXRvci1jZW50ZXIiLCJpYXQiOjE2MzcxODE0MTksImV4cCI6MTYzNzI2NzgxOSwiYXpwIjoiRWV4Wk5iSmY1cmoyRFBmVm44cjVKZU1kaTRlUVZGa1QiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.t7Da-OW67HTmjW5O7mD00TBv51UVCiakK_HsdppDnSDZ_w1KrUVvTZB6bV4vVR6P6omDq5HjdHLJCYdIrNM4iclS1jHDZ0HeyRxHWxGISyxNe55mKKL3lyhhcifECnALNoC1m_CthwFvf5LeOzL7LE_tjy3g3PEvGD8US1-E2tjzr5T2Nw7SAU3G-GFU19OWa1xOql4gcMrXpIVWlJKgZ1dMlhUCcTWaoIb7roApLKChIXUenbRKCjgg69yVp2dxDbMHPW4WsnGOYEXVRUbCam0LdYKJ8_bkPCdcgURCcyWjXsTxQl5AdPx4OteH8WGiGunvENty0EL8Z5nYaEDFUQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": 2,\r\n  \"nombre\": \"Miguel\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:44342/api/Repartidores/",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "44342",
+									"path": [
+										"api",
+										"Repartidores",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Ordenes Envio",
+					"item": [
+						{
+							"name": "Crear Orden Envio",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImtNYWVFVnkzXzdFbjIyN3NmOVFleSJ9.eyJpc3MiOiJodHRwczovL2Rldi1peTJjNmtlNS51cy5hdXRoMC5jb20vIiwic3ViIjoiRWV4Wk5iSmY1cmoyRFBmVm44cjVKZU1kaTRlUVZGa1RAY2xpZW50cyIsImF1ZCI6Imh0dHBzOi8vd3d3LmV4YW1wbGUuY29tL2FwaS1sb2dpc3RpYy1vcGVyYXRvci1jZW50ZXIiLCJpYXQiOjE2MzcxODE0MTksImV4cCI6MTYzNzI2NzgxOSwiYXpwIjoiRWV4Wk5iSmY1cmoyRFBmVm44cjVKZU1kaTRlUVZGa1QiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.t7Da-OW67HTmjW5O7mD00TBv51UVCiakK_HsdppDnSDZ_w1KrUVvTZB6bV4vVR6P6omDq5HjdHLJCYdIrNM4iclS1jHDZ0HeyRxHWxGISyxNe55mKKL3lyhhcifECnALNoC1m_CthwFvf5LeOzL7LE_tjy3g3PEvGD8US1-E2tjzr5T2Nw7SAU3G-GFU19OWa1xOql4gcMrXpIVWlJKgZ1dMlhUCcTWaoIb7roApLKChIXUenbRKCjgg69yVp2dxDbMHPW4WsnGOYEXVRUbCam0LdYKJ8_bkPCdcgURCcyWjXsTxQl5AdPx4OteH8WGiGunvENty0EL8Z5nYaEDFUQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"DireccionOrigen\": \"Piriapolis 3412\",\r\n    \"DireccionDestino\": \"Obispo Trejo 1033\",\r\n    \"ContactoComprador\": \"3512239875\",\r\n    \"DetalleProducto\": \"Pepsi\",\r\n    \"EstadoEnvio\": 0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:44342/api/ordenes_envio/",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "44342",
+									"path": [
+										"api",
+										"ordenes_envio",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Orden Envio",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImtNYWVFVnkzXzdFbjIyN3NmOVFleSJ9.eyJpc3MiOiJodHRwczovL2Rldi1peTJjNmtlNS51cy5hdXRoMC5jb20vIiwic3ViIjoiRWV4Wk5iSmY1cmoyRFBmVm44cjVKZU1kaTRlUVZGa1RAY2xpZW50cyIsImF1ZCI6Imh0dHBzOi8vd3d3LmV4YW1wbGUuY29tL2FwaS1sb2dpc3RpYy1vcGVyYXRvci1jZW50ZXIiLCJpYXQiOjE2MzcxODE0MTksImV4cCI6MTYzNzI2NzgxOSwiYXpwIjoiRWV4Wk5iSmY1cmoyRFBmVm44cjVKZU1kaTRlUVZGa1QiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.t7Da-OW67HTmjW5O7mD00TBv51UVCiakK_HsdppDnSDZ_w1KrUVvTZB6bV4vVR6P6omDq5HjdHLJCYdIrNM4iclS1jHDZ0HeyRxHWxGISyxNe55mKKL3lyhhcifECnALNoC1m_CthwFvf5LeOzL7LE_tjy3g3PEvGD8US1-E2tjzr5T2Nw7SAU3G-GFU19OWa1xOql4gcMrXpIVWlJKgZ1dMlhUCcTWaoIb7roApLKChIXUenbRKCjgg69yVp2dxDbMHPW4WsnGOYEXVRUbCam0LdYKJ8_bkPCdcgURCcyWjXsTxQl5AdPx4OteH8WGiGunvENty0EL8Z5nYaEDFUQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://localhost:44342/api/ordenes_envio/1",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "44342",
+									"path": [
+										"api",
+										"ordenes_envio",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Asignar Delivery",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImtNYWVFVnkzXzdFbjIyN3NmOVFleSJ9.eyJpc3MiOiJodHRwczovL2Rldi1peTJjNmtlNS51cy5hdXRoMC5jb20vIiwic3ViIjoiRWV4Wk5iSmY1cmoyRFBmVm44cjVKZU1kaTRlUVZGa1RAY2xpZW50cyIsImF1ZCI6Imh0dHBzOi8vd3d3LmV4YW1wbGUuY29tL2FwaS1sb2dpc3RpYy1vcGVyYXRvci1jZW50ZXIiLCJpYXQiOjE2MzcxODE0MTksImV4cCI6MTYzNzI2NzgxOSwiYXpwIjoiRWV4Wk5iSmY1cmoyRFBmVm44cjVKZU1kaTRlUVZGa1QiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.t7Da-OW67HTmjW5O7mD00TBv51UVCiakK_HsdppDnSDZ_w1KrUVvTZB6bV4vVR6P6omDq5HjdHLJCYdIrNM4iclS1jHDZ0HeyRxHWxGISyxNe55mKKL3lyhhcifECnALNoC1m_CthwFvf5LeOzL7LE_tjy3g3PEvGD8US1-E2tjzr5T2Nw7SAU3G-GFU19OWa1xOql4gcMrXpIVWlJKgZ1dMlhUCcTWaoIb7roApLKChIXUenbRKCjgg69yVp2dxDbMHPW4WsnGOYEXVRUbCam0LdYKJ8_bkPCdcgURCcyWjXsTxQl5AdPx4OteH8WGiGunvENty0EL8Z5nYaEDFUQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "https://localhost:44342/api/ordenes_envio/1/repartidor/3",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "44342",
+									"path": [
+										"api",
+										"ordenes_envio",
+										"1",
+										"repartidor",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Registrar Entrega",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImtNYWVFVnkzXzdFbjIyN3NmOVFleSJ9.eyJpc3MiOiJodHRwczovL2Rldi1peTJjNmtlNS51cy5hdXRoMC5jb20vIiwic3ViIjoiRWV4Wk5iSmY1cmoyRFBmVm44cjVKZU1kaTRlUVZGa1RAY2xpZW50cyIsImF1ZCI6Imh0dHBzOi8vd3d3LmV4YW1wbGUuY29tL2FwaS1sb2dpc3RpYy1vcGVyYXRvci1jZW50ZXIiLCJpYXQiOjE2MzcxODE0MTksImV4cCI6MTYzNzI2NzgxOSwiYXpwIjoiRWV4Wk5iSmY1cmoyRFBmVm44cjVKZU1kaTRlUVZGa1QiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.t7Da-OW67HTmjW5O7mD00TBv51UVCiakK_HsdppDnSDZ_w1KrUVvTZB6bV4vVR6P6omDq5HjdHLJCYdIrNM4iclS1jHDZ0HeyRxHWxGISyxNe55mKKL3lyhhcifECnALNoC1m_CthwFvf5LeOzL7LE_tjy3g3PEvGD8US1-E2tjzr5T2Nw7SAU3G-GFU19OWa1xOql4gcMrXpIVWlJKgZ1dMlhUCcTWaoIb7roApLKChIXUenbRKCjgg69yVp2dxDbMHPW4WsnGOYEXVRUbCam0LdYKJ8_bkPCdcgURCcyWjXsTxQl5AdPx4OteH8WGiGunvENty0EL8Z5nYaEDFUQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "https://localhost:44342/api/ordenes_envio/1/entrega",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "44342",
+									"path": [
+										"api",
+										"ordenes_envio",
+										"1",
+										"entrega"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Access Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"client_id\":\"EexZNbJf5rj2DPfVn8r5JeMdi4eQVFkT\",\r\n\"client_secret\":\"gfAmKArmrYwnq7Ly__UdEpZomTp2JW-zWexFOHErBFlb0rSkCghlkVmXYCLdudbD\",\r\n\"audience\":\"https://www.example.com/api-logistic-operator-center\",\r\n\"grant_type\":\"client_credentials\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dev-iy2c6ke5.us.auth0.com/oauth/token",
+							"protocol": "https",
+							"host": [
+								"dev-iy2c6ke5",
+								"us",
+								"auth0",
+								"com"
+							],
+							"path": [
+								"oauth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Access Token Procesador Envios",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"client_id\":\"kg2J17QDhZLLQGj3LHALwHvXoSgnsHGF\",\r\n\"client_secret\":\"jD1PE7CQW3sS4WgHEJITPnMoUg2cV1h7E5TBoSe_nu7pwaxYPAmkU5w4-o2ENBab\",\r\n\"audience\":\"https://www.api-procesador-envios.com/\",\r\n\"grant_type\":\"client_credentials\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dev-proc-envios.us.auth0.com/oauth/token",
+							"protocol": "https",
+							"host": [
+								"dev-proc-envios",
+								"us",
+								"auth0",
+								"com"
+							],
+							"path": [
+								"oauth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
