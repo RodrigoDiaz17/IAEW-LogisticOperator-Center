@@ -35,6 +35,7 @@ namespace IAEW_LogisticOperator_Center_API.Controllers
         }
 
         [HttpPost]
+        [Authorize(Policy = "write::repartidores")]
         public ActionResult Create([FromBody] Repartidor repartidor)
         {
             var nuevoRepartidor = _repartidoresService.Create(repartidor);
@@ -42,6 +43,7 @@ namespace IAEW_LogisticOperator_Center_API.Controllers
         }
 
         [HttpPut]
+        [Authorize(Policy = "write::repartidores")]
         public ActionResult Update(RepartidorDto dto)
         {
             var repartidor = _repartidoresService.Update(dto);
@@ -50,6 +52,7 @@ namespace IAEW_LogisticOperator_Center_API.Controllers
 
         [Route("{repartidorId}")]
         [HttpDelete]
+        [Authorize(Policy = "write::repartidores")]
         public IActionResult Delete(long repartidorId)
         {
             var repartidor = _repartidoresService.Delete(repartidorId);

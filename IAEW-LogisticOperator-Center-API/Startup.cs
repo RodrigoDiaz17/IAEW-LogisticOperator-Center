@@ -2,7 +2,6 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -11,13 +10,6 @@ using Microsoft.OpenApi.Models;
 using PersistanceLayer.Context;
 using ServiceLayer.Contracts;
 using ServiceLayer.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 
 namespace IAEW_LogisticOperator_Center_API
 {
@@ -35,17 +27,28 @@ namespace IAEW_LogisticOperator_Center_API
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            string domain = $"https://{Configuration["Auth0:Domain"]}/";
+
             services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
             }).AddJwtBearer(options =>
             {
-                options.Authority = "https://dev-iy2c6ke5.us.auth0.com/";
-                options.Audience = "https://www.example.com/api-logistic-operator-center";
+                options.Authority = domain;
+                options.Audience = Configuration["Auth0:Audience"];
+            });
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("write::envios", policy => policy.Requirements.Add(new HasScopeRequirement("write::envios", domain)));
+                options.AddPolicy("write::repartidores", policy => policy.Requirements.Add(new HasScopeRequirement("write::repartidores", domain)));
+                options.AddPolicy("write::estados_envios", policy => policy.Requirements.Add(new HasScopeRequirement("write::estados_envios", domain)));
             });
 
             services.AddControllers();
+
+            services.AddSingleton<IAuthorizationHandler, HasScopeHandler>();
 
             services.AddTransient<IRepartidoresService, RepartidoresService>();
             services.AddTransient<IOrdenesService, OrdenesService>();

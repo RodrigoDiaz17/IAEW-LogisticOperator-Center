@@ -32,6 +32,7 @@ namespace IAEW_LogisticOperator_Center_API.Controllers
         }
 
         [HttpPost()]
+        [Authorize(Policy = "write::envios")]
         public IActionResult CreateOrder([FromBody] OrdenEnvio datosEnvio) 
         {
             var nuevoEnvio = _ordenesService.Create(datosEnvio);
@@ -39,6 +40,7 @@ namespace IAEW_LogisticOperator_Center_API.Controllers
         }
 
         [HttpPost("{orden_envio}/repartidor/{id_repartidor}")]
+        [Authorize(Policy = "write::envios")]
         public IActionResult AssignDealer(long orden_envio , long id_repartidor)
         {
             var nuevoEnvio = _ordenesService.AssignDelivery(orden_envio, id_repartidor);
@@ -46,6 +48,7 @@ namespace IAEW_LogisticOperator_Center_API.Controllers
         }
 
         [HttpPost("{orden_envio}/entrega")]
+        [Authorize(Policy = "write::envios")]
         public async Task<IActionResult> RegisterDelivery([FromRoute] long orden_envio)
         {
             var result = await _ordenesService.RegisterDelivery(orden_envio);
